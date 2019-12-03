@@ -10,7 +10,7 @@ namespace SimpleAssemblyLoadTestCase
 {
     public class App
     {
-        [STAThread]
+        //[STAThread]
         private static void Main()
         {
             var loggerFactory = LoggerFactory.Create(

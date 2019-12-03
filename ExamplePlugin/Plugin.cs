@@ -20,9 +20,6 @@ namespace ExamplePlugin
         public void Initialise()
         {
             _logger?.LogInformation("Initialising plugin.");
-
-            //var window = new MainWindow();
-            //window.Show();
         }
     }
 }
