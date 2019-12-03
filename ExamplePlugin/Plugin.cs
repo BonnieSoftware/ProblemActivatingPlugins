@@ -21,8 +21,8 @@ namespace ExamplePlugin
         {
             _logger?.LogInformation("Initialising plugin.");
 
-            var window = new MainWindow();
-            window.Show();
+            //var window = new MainWindow();
+            //window.Show();
         }
     }
 }
