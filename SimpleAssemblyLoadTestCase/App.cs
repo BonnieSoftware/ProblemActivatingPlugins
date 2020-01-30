@@ -21,13 +21,17 @@ namespace SimpleAssemblyLoadTestCase
                 .BuildServiceProvider();
 
             string pluginPath = Path.GetFullPath(@"..\..\..\..\ExamplePlugin\bin\Debug\netcoreapp3.0\ExamplePlugin.dll");
-            var loadContext = new PluginLoadContext(pluginPath);
+            var loadContext = new PluginLoadContext(pluginPath, new[] {
+                typeof(ILogger).Assembly.GetName().Name,
+                typeof(IPlugin).Assembly.GetName().Name
+            });
+
             Assembly assembly = loadContext.LoadFromAssemblyName(new AssemblyName(Path.GetFileNameWithoutExtension(pluginPath)));
             IEnumerable<IPlugin> plugins = CreatePluginInstances(services, assembly);
 
             foreach (IPlugin plugin in plugins)
             {
-                plugin?.Initialise();
+                plugin.Initialise();
             }
         }
 
