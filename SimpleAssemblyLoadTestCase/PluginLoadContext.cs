@@ -21,7 +21,7 @@ namespace SimpleAssemblyLoadTestCase
         {
             if (_shared.Contains(assemblyName.Name))
             {
-                // Load from the default context?
+                // Load from the default context
                 return null;
             }
 
